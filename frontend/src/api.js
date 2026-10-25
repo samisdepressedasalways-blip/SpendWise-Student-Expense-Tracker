@@ -41,7 +41,11 @@ function createClient(baseURL) {
 }
 
 // Express API (Node.js): auth, expenses, budget. Vite forwards /api to port 5000
-const api = createClient("/api");
+const api = createClient(
+  import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL}/api`
+    : "/api"
+);
 
 // FastAPI service (Python): insights and CSV export. Vite forwards /analytics to port 8000.
 // For a production build, set VITE_ANALYTICS_URL (for example http://localhost:8000)
