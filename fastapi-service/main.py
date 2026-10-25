@@ -16,12 +16,14 @@ app = FastAPI(
     version="1.0.0",
 )
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
-    allow_methods=["GET"],
-    allow_headers=["Authorization"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
+
 
 
 def month_param(month: str | None = Query(None, description="Month as YYYY-MM (default: this month)")) -> str:
