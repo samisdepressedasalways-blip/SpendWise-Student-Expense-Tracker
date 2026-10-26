@@ -20,8 +20,8 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
-      <Route path="/login" element={user ? <Navigate to="/dashboard" replace /> : <AuthPage />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
+<Route path="/login" element={user ? <Navigate to="/dashboard" replace /> : <AuthPage />} />
 
       {/* Pages that need a login */}
       <Route element={<ProtectedRoute />}>
